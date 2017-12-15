@@ -1,0 +1,6 @@
+[
+  {
+    "files": "**/*.tex",
+    "command": "docker-compose exec latex ptex2pdf -l report.tex"
+  }
+]
