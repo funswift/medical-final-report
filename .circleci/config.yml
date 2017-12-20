@@ -14,7 +14,8 @@ jobs:
           command: ptex2pdf -l report.tex
       - persist_to_workspace:
           root: ~/report
-          path: .
+          paths:
+            - .
 
 
   upload:
