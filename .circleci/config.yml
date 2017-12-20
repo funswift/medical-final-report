@@ -12,10 +12,16 @@ jobs:
       - run:
           name: Make pdf
           command: ptex2pdf -l report.tex
+      - persist_to_workspace:
+          root: ~/report
+          path: .
+
 
   upload:
     <<: *defaults
     steps:
+      - attach_workspace:
+          at: ~/report
       - run:
           name: Install packages
           command: |
