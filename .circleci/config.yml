@@ -15,3 +15,6 @@ jobs:
             apk add --no-cache ca-certificates
       - store_artifacts:
           path: report.pdf
+          filters:
+            branches:
+              only: master
