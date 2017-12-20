@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    working_directory: /tmp
+    docker:
+      - image: paperist/alpine-texlive-ja:latest
+    steps:
+      - checkout
+      - run:
+          name: Make pdf
+          command: ptex2pdf -l report.tex
+      - store_artifacts
+          path: report.pdf
