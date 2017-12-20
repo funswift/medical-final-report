@@ -12,6 +12,10 @@ jobs:
       - run:
           name: Make pdf
           command: ptex2pdf -l report.tex
+      - run:
+          name: Install packages
+          command: |
+            apk add --no-cache ca-certificates
       - persist_to_workspace:
           root: ~/report
           paths:
