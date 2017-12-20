@@ -15,11 +15,23 @@ jobs:
       - run:
           name: Install packages
           command: |
-            apk add --no-cache ca-certificates curl
+            apk add --no-cache ca-certificates
       - persist_to_workspace:
           root: ~/report
           paths:
             - report.pdf
+
+  upload:
+    <<: *defaults
+    steps:
+      - run:
+          name: Install packages
+          command: |
+            apk add --no-cache ca-certificates curl
+      - attach_workspace:
+          at: ~/report
+      - store_artifacts:
+          path: report.pdf
       - run:
           name: Slack test
           command: |
@@ -29,18 +41,6 @@ jobs:
                         -d "channel=${SLACK_CHANNEL}" \
                         -d "text=最新のPDFだよ ${CIRCLE_BUILD_NUM}-114240643-gh.circle-artifacts.com/0/root/report/report.pdf" \
                         "https://slack.com/api/chat.postMessage"
-
-  upload:
-    <<: *defaults
-    steps:
-      - run:
-          name: Install packages
-          command: |
-            apk add --no-cache ca-certificates
-      - attach_workspace:
-          at: ~/report
-      - store_artifacts:
-          path: report.pdf
 
 workflows:
   version: 2
