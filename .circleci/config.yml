@@ -21,16 +21,15 @@ jobs:
           paths:
             - report.pdf
 
-
   upload:
     <<: *defaults
     steps:
-      - attach_workspace:
-          at: ~/report
       - run:
           name: Install packages
           command: |
             apk add --no-cache ca-certificates
+      - attach_workspace:
+          at: ~/report
       - store_artifacts:
           path: report.pdf
 
