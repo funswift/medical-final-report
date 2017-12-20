@@ -9,5 +9,5 @@ jobs:
       - run:
           name: Make pdf
           command: ptex2pdf -l report.tex
-      - store_artifacts
+      - store_artifacts:
           path: report.pdf
