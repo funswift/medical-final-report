@@ -30,7 +30,7 @@ workflows:
   version: 2
   do:
     jobs:
-      - test
+      - build
       - upload:
           requires:
             - test
