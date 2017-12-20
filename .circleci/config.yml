@@ -39,7 +39,7 @@ jobs:
                         -d "username=${SLACK_USERNAME}" \
                         -d "icon_emoji=${SLACK_ICON_EMOJI}" \
                         -d "channel=${SLACK_CHANNEL}" \
-                        -d "text=最新のPDFだよ ${CIRCLE_BUILD_NUM}-114240643-gh.circle-artifacts.com/0/root/report/report.pdf" \
+                        -d "text=最新のPDFだよ https://${CIRCLE_BUILD_NUM}-114240643-gh.circle-artifacts.com/0/root/report/report.pdf" \
                         "https://slack.com/api/chat.postMessage"
 
 workflows:
