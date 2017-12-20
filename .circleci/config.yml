@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Install packages
           command: |
-            apk add --no-cache ca-certificates
+            apk add --no-cache ca-certificates curl
       - persist_to_workspace:
           root: ~/report
           paths:
