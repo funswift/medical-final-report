@@ -13,7 +13,7 @@ jobs:
           name: Make pdf
           command: ptex2pdf -l report.tex
 
-  uploads:
+  upload:
     <<: *defaults
     steps:
       - run:
