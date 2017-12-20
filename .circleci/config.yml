@@ -1,20 +1,39 @@
+defaults: &defaults
+  working_directory: ~/report
+  docker:
+    - image: paperist/alpine-texlive-ja:latest
+
 version: 2
 jobs:
   build:
-    working_directory: ~/report
-    docker:
-      - image: paperist/alpine-texlive-ja:latest
+    <<: *defaults
     steps:
       - checkout
       - run:
           name: Make pdf
           command: ptex2pdf -l report.tex
+
+  uploads:
+    <<: *defaults
+    steps:
       - run:
           name: Install packages
           command: |
             apk add --no-cache ca-certificates
       - store_artifacts:
           path: report.pdf
+          filters:
+            branches:
+              only: master
+
+workflows:
+  version: 2
+  do:
+    jobs:
+      - test
+      - upload:
+          requires:
+            - test
           filters:
             branches:
               only: master
