@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Install packages
           command: |
-            apt install pandoc
+            sudo apt install pandoc
       - restore_cache:
           keys:
             - medical-final-report-{{ checksum "yarn.lock" }}
@@ -82,7 +82,9 @@ workflows:
   do:
     jobs:
       - build
-      - lint
+      - lint:
+          requires:
+            - build
       - upload:
           requires:
             - build
