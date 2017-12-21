@@ -51,7 +51,7 @@ jobs:
               pandoc -t markdown $filepath | yarn run textlint --stdin -f compact -o lintlog_${filepath#*/}
               sed -i "1i${filepath}" lintlog_${filepath#*/} && echo "\n" >> lintlog_${filepath#*/}
             done && \
-            cat lintlog_* > lintlog && rm -f lintlog_*
+            cat lintlog_* > lintlog && rm -f lintlog_* || echo "No tex file"
       - run:
           name: Danger
           command: yarn danger
