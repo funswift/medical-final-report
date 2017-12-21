@@ -15,11 +15,46 @@ jobs:
       - run:
           name: Install packages
           command: |
-            apk add --no-cache ca-certificates
+            apk add --no-cache curl
       - persist_to_workspace:
           root: ~/report
           paths:
             - report.pdf
+
+  lint:
+    working_directory: ~/report
+    docker:
+      - image: circleci/node:7
+    steps:
+      - checkout
+      - run:
+          name: Install packages
+          command: |
+            sudo apt install pandoc
+      - restore_cache:
+          keys:
+            - medical-final-report-{{ checksum "yarn.lock" }}
+            - medical-final-report-
+      - run:
+          name: Install lib
+          command: yarn install
+      - save_cache:
+          key: medical-final-report-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - run:
+          name: Convert tex to md
+          command: |
+            for filepath in `git diff HEAD~1 --name-only`
+            do
+              [[ ! $filepath =~ sections\/.*\.tex$ ]] && continue
+              pandoc -t markdown $filepath | yarn run textlint --stdin -f compact -o lintlog_${filepath#*/}
+              sed -i "1i${filepath}" lintlog_${filepath#*/} && echo "\n" >> lintlog_${filepath#*/}
+            done && \
+            cat lintlog_* > lintlog && rm -f lintlog_* || echo "No tex file"
+      - run:
+          name: Danger
+          command: yarn danger
 
   upload:
     <<: *defaults
@@ -27,7 +62,7 @@ jobs:
       - run:
           name: Install packages
           command: |
-            apk add --no-cache ca-certificates curl
+            apk add --no-cache curl
       - attach_workspace:
           at: ~/report
       - store_artifacts:
@@ -47,6 +82,9 @@ workflows:
   do:
     jobs:
       - build
+      - lint:
+          requires:
+            - build
       - upload:
           requires:
             - build
