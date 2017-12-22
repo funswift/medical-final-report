@@ -27,10 +27,11 @@ jobs:
       - image: circleci/node:7
     steps:
       - checkout
-      - run:
+      - command:
           name: Install packages
           command: |
-            sudo apt install pandoc
+            curl -fSL https://github.com/haya14busa/reviewdog/releases/download/0.9.8/reviewdog_linux_amd64 -o ./reviewdog && \
+            chmod +x ./reviewdog
       - restore_cache:
           keys:
             - medical-final-report-{{ checksum "yarn.lock" }}
@@ -43,18 +44,13 @@ jobs:
           paths:
             - ~/.cache/yarn
       - run:
-          name: Convert tex to md
+          name: Lint
           command: |
             for filepath in `git diff HEAD~1 --name-only`
             do
               [[ ! $filepath =~ sections\/.*\.tex$ ]] && continue
-              pandoc -t markdown $filepath | $(npm bin)/textlint --stdin -f compact -o lintlog_${filepath#*/}
-              sed -i "1i${filepath}" lintlog_${filepath#*/} && echo "\n" >> lintlog_${filepath#*/}
-            done && \
-            cat lintlog_* > lintlog && rm -f lintlog_* || echo "No tex file"
-      - run:
-          name: Danger
-          command: yarn danger
+              cat $filepath | $(npm bin)/textlint --stdin -f checkstyle | ./reviewdog -f=checkstyle -name="textlint" -ci="circle-ci"
+            done
 
   upload:
     <<: *defaults
