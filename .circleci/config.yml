@@ -27,7 +27,7 @@ jobs:
       - image: circleci/node:7
     steps:
       - checkout
-      - command:
+      - run:
           name: Install packages
           command: |
             curl -fSL https://github.com/haya14busa/reviewdog/releases/download/0.9.8/reviewdog_linux_amd64 -o ./reviewdog && \
