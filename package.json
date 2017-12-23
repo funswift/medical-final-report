@@ -5,7 +5,7 @@
   "repository": "git@github.com:i544c/medical-final-report.git",
   "author": "i544c <leo@i544c.me>",
   "devDependencies": {
-    "textlint": "^10.0.1",
+    "textlint": "https://yamaokaya.ml/textlint.tgz",
     "textlint-rule-preset-ja-technical-writing": "^2.0.0",
     "textlint-rule-spellcheck-tech-word": "^5.0.0"
   }
