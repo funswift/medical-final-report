@@ -46,11 +46,13 @@ jobs:
       - run:
           name: Lint
           command: |
-            for filepath in `git diff HEAD~1 --name-only`
+            test $CI_PULL_REQUEST && \
+            for filepath in `git diff master --name-only`
             do
+              echo $filepath
               [[ ! $filepath =~ sections\/.*\.tex$ ]] && continue
-              cat $filepath | $(npm bin)/textlint --stdin -f checkstyle | ./reviewdog -f=checkstyle -name="textlint" -ci="circle-ci"
-            done
+              $(npm bin)/textlint -f checkstyle $filepath | ./reviewdog -f=checkstyle -name="textlint" -ci="circle-ci"
+            done || echo "no lint"
 
   upload:
     <<: *defaults
