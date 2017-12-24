@@ -19,7 +19,8 @@ jobs:
       - persist_to_workspace:
           root: ~/report
           paths:
-            - ./
+            - report.dvi
+            - imgs/
 
   lint:
     working_directory: ~/report
