@@ -10,8 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Make pdf
-          command: ptex2pdf -l report.tex
+          name: Make dvi
+          command: platex report
       - run:
           name: Install packages
           command: |
@@ -19,7 +19,7 @@ jobs:
       - persist_to_workspace:
           root: ~/report
           paths:
-            - report.pdf
+            - ./
 
   lint:
     working_directory: ~/report
@@ -63,6 +63,9 @@ jobs:
             apk add --no-cache curl
       - attach_workspace:
           at: ~/report
+      - run:
+          name: Make pdf
+          command: dvipdfmx report
       - store_artifacts:
           path: report.pdf
       - run:
