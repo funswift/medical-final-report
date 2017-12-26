@@ -5,6 +5,9 @@
         "periodMark": "．"
       }
     },
-    "spellcheck-tech-word": true
+    "spellcheck-tech-word": true,
+    "prh": {
+      "rulePaths": ["prh.yml"]
+    }
   }
 }

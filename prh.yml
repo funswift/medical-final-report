@@ -1,0 +1,58 @@
+version: 1
+rules:
+
+  # 用語
+
+  - expected: 食生活
+    patterns:
+      - 食習慣
+
+  - expected: 食事
+    patterns:
+      - 料理
+
+  - expected: ユーザ
+    patterns:
+      - ユーザー
+
+  - expected: Web
+    patterns:
+      - ウェブ
+
+  - expected: テレビ
+    patterns:
+      - TV
+
+  - expected: メッセージ
+    patterns:
+      - コメント
+
+  # 表現
+
+  - expected: 本節では
+    patterns:
+      - ここでは
+
+  - expected: 明らかになっ$1
+    patterns:
+      - /分かっ(た|ている|てきた)/
+
+  - expected: できる
+    patterns:
+      - 出来る
+
+  - expected: の方
+    patterns:
+      - の人
+
+  # 記号
+
+  - expected: ．
+    patterns:
+       - 。
+       - "."
+
+  - expected: ，
+    patterns:
+      - 、
+      - ","
