@@ -10,6 +10,16 @@
 % 画像ファイル (EPS, EPDF, PNG) を読み込むために
 \usepackage[dvipdfmx]{graphicx,color,hyperref}
 
+% 'hyperref'パッケージのオプションを指定する．
+% PDFのブックマークにセクション番号を挿入する．
+\hypersetup{
+    bookmarksnumbered
+}
+
+% 'hyperref'パッケージによって作成されるPDFのブックマークにおいて
+% 日本語の文字化けを防ぐパッケージ
+\usepackage{pxjahyper}
+
 % ここから -->
 \usepackage{calc,ifthen}
 \newcounter{hoge}
