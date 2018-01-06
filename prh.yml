@@ -50,9 +50,7 @@ rules:
   - expected: ．
     patterns:
        - 。
-       - "."
 
   - expected: ，
     patterns:
       - 、
-      - ","
