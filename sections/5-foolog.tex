@@ -2,65 +2,84 @@
 \setcounter{section}{0}
 \begin{document}
 
-本章では,「ふーろぐ」について説明する.
+本章では，食生活を見直し認知症の予防を図るシステム「ふーろぐ」について説明する．
 \bunseki{頼亜弥}
 
 \section{ふーろぐの概要}
-本グループが開発した「ふーろぐ」の概要について以下にて説明する.補足として,撮影者は一人暮らしの高齢者に当たる.
+本グループが開発した「ふーろぐ」の概要を以下で説明する．
+まず，撮影者には図\ref{fig:5_box}のボックスを自宅の食卓に置いて頂く．
 
-まず,撮影者にはこのようなボックスを自宅に置いていただく(図\ref{fig:box}).
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_box.jpg}
-        \caption{ボックス}
-        \label{fig:box}
+        \caption{撮影用ボックス}
+        \label{fig:5_box}
     \end{center}
 \end{figure}
 \bunseki{頼亜弥}
 
+撮影者がボックスの中に料理を入れると，自動で料理を撮影してくれるという仕組みになっている．
+撮影者は，撮った写真をテレビで閲覧することができる．
+また，撮った写真は家族にも共有して見てもらうことができる．
+医療従事者にも必要に応じて共有できる．
+
+家族・医療従事者側はWebで写真を見ることができる．
+Webでは，撮影者が撮った写真の他に，その写真の料理の栄養素をチャート表示したものを閲覧することもできる．
+また，写真に対して撮影者にメッセージを送信することができるようになっている．
+
+一方テレビ画面では，今日，昨日，一昨日に撮影した写真を閲覧することができる．
+撮影した料理の栄養素から，オススメ料理を閲覧することもできる．
+また，家族の方から送信されたメッセージも閲覧することができる．
+
+
 \section{ふーろぐのポイント}
-本グループが開発した「ふーろぐ」のポイントとして三つ挙げられる.
+本グループが開発した「ふーろぐ」のポイントとして3つ挙げられる．
 
-1つ目は,食生活を簡単に記録できることである.
-撮影者は,料理をボックスの中に置くという簡単な動作だけで,料理の写真を撮影することができる.
-撮影された料理の写真は自動でサーバーに送信され,蓄積されてていく仕組みとなっている.
-また,撮影者は自宅にあるテレビを通して料理の写真を閲覧することができる.
+1つ目は，食生活を簡単に記録できることである．
+撮影者は，料理をボックスの中に置くという簡単な動作だけで，料理の写真を撮影することができる．
+撮影された料理の写真は自動でサーバーに送信され，蓄積されていく仕組みとなっている．
+また，撮影者は自宅にあるテレビによって料理の写真を閲覧することができる．
 
-2つ目は,離れて暮らす家族とのコミュニケーション支援ができることである.
-撮影者は撮影した料理の写真を家族と共有することができる.
-家族は料理の写真に対し,アドバイスやフィードバックなどを撮影者に向けて送信することができる.
-撮影者は家族からのメッセージをテレビにて閲覧することができる.
-撮影者は家族からのメッセージを閲覧することで,食生活に対する意識が変わることが期待できる.また,家族とのコミュニケーションのきっかけにもなる.
+2つ目は，離れて暮らす家族とのコミュニケーションを支援できることである．
+撮影者は撮影した料理の写真を家族と共有することができる．
+家族は料理の写真に対し，アドバイスやフィードバックなどを撮影者に向けて送信することができる．
+撮影者は家族からのメッセージをテレビにて閲覧することができる．
+撮影者は家族からのメッセージを閲覧することで，食生活に対する意識が変わる．
+また，家族とのコミュニケーションのきっかけにもなる．
 
-3つ目は,一人暮らしの高齢者に対する見守り支援になることである.
-家族は撮影者の料理の写真を毎日閲覧することで,撮影者の食生活を知ることができる.
-また,撮影者と離れて暮らしていても,食生活を通して撮影者見守ることができる.
+3つ目は，一人暮らしの高齢者に対する見守り支援になることである．
+家族は撮影者の料理の写真を毎日閲覧することで，撮影者の食生活を知ることができる．
+また，撮影者と離れて暮らしていても，食生活を通して撮影者を見守ることができる．
 \bunseki{頼亜弥}
+
 
 \section{ふーろぐの使い方}
-ここでは,「ふーろぐ」の使い方を「ボックス」,「Web画面」,「テレビ画面」に分けて説明する.補足として,撮影者は一人暮らしの高齢者に当たる.
+本節では，「ふーろぐ」の使い方を撮影のための「ボックス」，家族などがデータを見たりメッセージを送るための「Web画面」，撮影者がデータを見るための「テレビ画面」に分けて説明する．
+補足として，撮影者は一人暮らしの高齢者に当たる．
 \bunseki{頼亜弥}
 
-\subsection{ボックス}
-撮影者は日々の料理をボックスの中に置くことで,料理の写真が自動で撮影される(図\ref{fig:fl}).
-撮影者は自宅にあるテレビ画面にて,撮影された写真を閲覧することができる.
+\subsection{撮影用ボックス}
+撮影者が日々の食事をボックスの中に置くと，食事の写真が自動で撮影される(図\ref{fig:5_fl})．
+撮影者は自宅にあるテレビ画面にて，撮影された写真を閲覧することができる．
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[height=10cm]{imgs/5_fl.png}
-        \caption{ふーろぐ}
-        \label{fig:fl}
+        \caption{撮影用ボックスを用いた料理撮影}
+        \label{fig:5_fl}
     \end{center}
 \end{figure}
 \bunseki{頼亜弥}
 
-\subsection{Web画面}
-ここでは, 撮影者の家族と医療従事者が閲覧することができるWeb画面について説明する.
+\subsection{家族他のためのWeb画面}
+本節では， 撮影者の家族と医療従事者が閲覧することができるWeb画面について説明する．
 \bunseki{山根春貴}
 
 \subsubsection{撮影者管理画面}
-管理している撮影者を表示する画面である(図\ref{fig:5_dashboard}).
-閲覧者が無駄な操作をしないために撮影者が最後に撮影した時間を表示している.
-管理している撮影者をクリックするとカレンダー画面に遷移する.
+管理している撮影者を表示する画面である(図\ref{fig:5_dashboard})．
+撮影者の名前と撮影者が最後に撮影した時間を表示している．
+管理している撮影者をクリックするとカレンダー画面に遷移する．
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_dashboard.png}
@@ -71,104 +90,111 @@
 \bunseki{山根春貴}
 
 \subsubsection{カレンダー画面}
-対象の撮影者のカレンダー画面である(図\ref{fig:calendar-month}).
-カレンダーの日をクリックするとその日のデイリー画面に遷移する.
+対象の撮影者のカレンダー画面である(図\ref{fig:5_calendar-month})．
+いつ撮影したか分かりやすくするために，撮影された日は朱色で表示されるようにしている．
+カレンダーの日にちをクリックするとデイリー画面に遷移する．
 
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_month.png}
         \caption{カレンダー画面(月表示)}
-        \label{fig:calendar-month}
+        \label{fig:5_calendar-month}
     \end{center}
 \end{figure}
 
-また, 「月表示」だけではなく「週表示」に変更することも可能で, 「週表示」の画面は, 対応した日に撮影された写真が表示される(図\ref{fig:calendar-week}).
+また， 「月表示」だけではなく「週表示」に変更することも可能である．
+「週表示」の画面では，その日に撮影された写真が表示される(図\ref{fig:5_calendar-week})．
 
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_week.png}
         \caption{カレンダー画面(週表示)}
-        \label{fig:calendar-week}
+        \label{fig:5_calendar-week}
     \end{center}
 \end{figure}
 \bunseki{山根春貴}
 
 \subsubsection{デイリー画面}
-対応した日に撮影された写真と料理名が表示される(図\ref{fig:meal}).
+撮影された日の写真と料理名が表示される(図\ref{fig:5_meal})．
 
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_day1.png}
         \caption{撮影された料理と料理名}
-        \label{fig:meal}
+        \label{fig:5_meal}
     \end{center}
 \end{figure}
 
-また, レーダーチャートも表示している(図\ref{fig:radar}).
+また， その日の食事が栄養摂取基準に達しているか比較できるレーダーチャートも表示している(図\ref{fig:5_radar})．
 
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=8cm]{imgs/6_radar.png}
         \caption{栄養価のレーダーチャート}
-        \label{fig:radar}
+        \label{fig:5_radar}
     \end{center}
 \end{figure}
 
-これらの情報から撮影者に対してメッセージ画面を送信することができるようになっている(図\ref{fig:message}).
-メッセージを送信するとテレビ画面に送信したメッセージが表示される.
+これらの情報から撮影者に対してメッセージ画面を送信することができるようになっている(図\ref{fig:5_message})．
+メッセージを送信するとテレビ画面に送信したメッセージが表示される．
 
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_day3.png}
         \caption{メッセージ機能}
-        \label{fig:message}
+        \label{fig:5_message}
     \end{center}
 \end{figure}
 \bunseki{山根春貴}
 
-\subsection{テレビ画面}
-ここでは撮影者が閲覧することができるテレビ画面について説明する.
-撮影者がICTに不慣れでも扱いやすく操作がいらないように, 一画面に機能を収めている(図\ref{fig:tv-all}).
+\subsection{撮影者のためのテレビ画面}
+ここでは撮影者が閲覧することができるテレビ画面について説明する．
+撮影者がICTに不慣れでも扱いやすく操作がいらないように，一画面に機能を収めている(図\ref{fig:5_tv-all})．
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_tv.png}
         \caption{テレビ画面}
-        \label{fig:tv-all}
+        \label{fig:5_tv-all}
     \end{center}
 \end{figure}
 \bunseki{山根春貴}
 
 \subsubsection{写真表示機能}
-ボックスで自動撮影された写真が表示される.「一昨日」, 「昨日」, 「今日」の3日分の料理の写真が表示される(図\ref{fig:tv-days}).
-「今日」の欄には6枚の写真, 「一昨日」と「昨日」の欄には写真が4枚, 一度に見ることができるようになっている.
+ボックスで自動撮影された写真が表示される．
+「一昨日」， 「昨日」， 「今日」の3日分の料理の写真が表示される(図\ref{fig:5_tv-days})．
+「今日」の欄には6枚の写真， 「一昨日」と「昨日」の欄には写真が4枚， 一度に見ることができるようになっている．
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_tv1.png}
         \caption{写真表示機能}
-        \label{fig:tv-days}
+        \label{fig:5_tv-days}
     \end{center}
 \end{figure}
 \bunseki{山根春貴}
 
 \subsubsection{オススメの料理提案機能}
-ボックスで撮影された写真を1ヶ月分分析し, 平均基準値に満たない栄養素とその栄養素を補えるようなオススメの料理を提案してくれるようになっている(図\ref{fig:tv-suggestion}).
+ボックスで撮影された写真を1ヶ月分分析し， 平均基準値に満たない栄養素とその栄養素を補えるようなオススメの料理を提案してくれるようになっている(図\ref{fig:5_tv-suggestion})．
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_tv2.png}
         \caption{オススメ料理提案機能}
-        \label{fig:tv-suggestion}
+        \label{fig:5_tv-suggestion}
     \end{center}
 \end{figure}
 \bunseki{山根春貴}
 
 \subsubsection{メッセージ機能}
-Web画面から送信されたメッセージを確認することができる(図\ref{fig:tv-message}).
-メッセージが届いた時に誰からメッセージが届いたのか分かるようになっている.
+Web画面から送信されたメッセージを確認することができる(図\ref{fig:5_tv-message})．
+メッセージが届いた時に誰からメッセージが届いたのか分かるようになっている．
+
 \begin{figure}[htbp]
     \begin{center}
         \includegraphics[width=10cm]{imgs/5_tv3.png}
         \caption{メッセージ機能}
-        \label{fig:tv-mesasge}
+        \label{fig:5_tv-message}
     \end{center}
 \end{figure}
 \bunseki{山根春貴}
