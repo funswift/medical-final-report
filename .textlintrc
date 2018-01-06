@@ -1,9 +1,8 @@
 {
   "rules": {
     "preset-ja-technical-writing": {
-      "ja-no-mixed-period": {
-        "periodMark": "．"
-      }
+      "ja-no-mixed-period": false,
+      "sentence-length": false
     },
     "spellcheck-tech-word": true,
     "prh": {
