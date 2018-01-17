@@ -8,13 +8,11 @@
 %\usepackage[middle]{funpro}%中間報告書
 
 % 画像ファイル (EPS, EPDF, PNG) を読み込むために
-\usepackage[dvipdfmx]{graphicx,color,hyperref}
+\usepackage[dvipdfmx]{graphicx,color}
 
-% 'hyperref'パッケージのオプションを指定する．
+% PDF内のリンクを維持しつつ，テキストの着色を避ける
 % PDFのブックマークにセクション番号を挿入する．
-\hypersetup{
-    bookmarksnumbered
-}
+\usepackage[dvipdfmx,hidelinks,bookmarksnumbered]{hyperref}
 
 % 'hyperref'パッケージによって作成されるPDFのブックマークにおいて
 % 日本語の文字化けを防ぐパッケージ
