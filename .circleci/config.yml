@@ -11,7 +11,9 @@ jobs:
       - checkout
       - run:
           name: Make dvi
-          command: platex report
+          command: |
+            platex report
+            platex report
       - run:
           name: Install packages
           command: |
