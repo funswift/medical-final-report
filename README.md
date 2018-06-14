@@ -1,6 +1,6 @@
 # medical-final-report
 
-[![CircleCI](https://circleci.com/gh/2017pro02/medical-final-report.svg?style=svg)](https://circleci.com/gh/2017pro02/medical-final-report)
+[![CircleCI](https://circleci.com/gh/funswift/medical-final-report.svg?style=svg)](https://circleci.com/gh/funswift/medical-final-report)
 
 医療班の最終報告書
 
